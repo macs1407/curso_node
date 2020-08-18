@@ -1,0 +1,804 @@
+{
+	"info": {
+		"_postman_id": "a8578fea-eeb7-494e-9b45-4cc0e2083488",
+		"name": "Node",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Usuario: Crear usuario",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					},
+					{
+						"key": "x-rapidapi-host",
+						"value": "devru-latitude-longitude-find-v1.p.rapidapi.com",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"maikol\",\n    \"email\":\"macs1407@gmail.com\",\n    \"password\":\"123\",\n    \"role\":\"ADMIN_ROLE\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/usuario",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usuario"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Actualizar usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "maikol cucunuba",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "USER_ROLE",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/usuario/5f3473e017187a03e1c9f289",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usuario",
+						"5f3473e017187a03e1c9f289"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "maikol",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Desactivar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "maikol cucunuba",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "USER_ROLE",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/usuarioDesactivar/5f3400a6d48a3d27a00eba39",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usuarioDesactivar",
+						"5f3400a6d48a3d27a00eba39"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "maikol",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Get usuarios",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/usuario?desde=0&limite=10",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usuario"
+					],
+					"query": [
+						{
+							"key": "desde",
+							"value": "0"
+						},
+						{
+							"key": "limite",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Obtener los usuarios por pagina"
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Usuario",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/usuario/5f33f0762ca4da1c8b02d733?Authorization={{token}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"usuario",
+						"5f33f0762ca4da1c8b02d733"
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "macs1407@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/login",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria: obtener categorias",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "descripcion",
+							"value": "Prog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/categoria",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria: obtener categoria por id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "descripcion",
+							"value": "Prog",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/categoria/5f35c525976c6b0aa810bba4",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categoria",
+						"5f35c525976c6b0aa810bba4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria: Actualizar categoria",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "descripcion",
+							"value": "Programacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/categoria/5f369d3864b2770017f5d945",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categoria",
+						"5f369d3864b2770017f5d945"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria: Guardar categoria",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "descripcion",
+							"value": "Programacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/categoria",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Categoria: Eliminar categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "descripcion",
+							"value": "Programacion",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/categoria/5f369cf064b2770017f5d942",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"categoria",
+						"5f369cf064b2770017f5d942"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: guardar",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "Curso node",
+							"type": "text"
+						},
+						{
+							"key": "precioUni",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "categoria",
+							"value": "5f369d3864b2770017f5d945",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/producto",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: Actualizar",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "React",
+							"type": "text"
+						},
+						{
+							"key": "precioUnitario",
+							"value": "15000",
+							"type": "text"
+						},
+						{
+							"key": "descripcion",
+							"value": "curso de react",
+							"type": "text"
+						},
+						{
+							"key": "categoria",
+							"value": "5f35c525976c6b0aa810bba4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/producto/5f35aeaeda7e6f78c3b72cbb",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						"5f35aeaeda7e6f78c3b72cbb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: Listar productos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "react",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "precioUnitario",
+							"value": "10000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "descripcion",
+							"value": "curso de react",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "categoria",
+							"value": "5f3575d0083c0a54b536caa1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/producto",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: Obtener Producto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "nombre",
+							"value": "react",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "precioUnitario",
+							"value": "10000",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "descripcion",
+							"value": "curso de react",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "categoria",
+							"value": "5f3575d0083c0a54b536caa1",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/producto/5f35d08d9698ef116f6beabf",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						"5f35d08d9698ef116f6beabf"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: Eliminar",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/producto/5f35d0ab9698ef116f6beac0",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						"5f35d0ab9698ef116f6beac0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: buscar productos",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/producto/buscar/CURSO",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"producto",
+						"buscar",
+						"CURSO"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Subir Imagen",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/home/maikol/Imágenes/7273350_0.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/upload/usuarios/5f340127924bcd288a8414cc",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"upload",
+						"usuarios",
+						"5f340127924bcd288a8414cc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Producto: Subir Imagen",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "{{token}}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/home/maikol/Imágenes/descarga.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}/upload/productos/5f369d7564b2770017f5d946",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"upload",
+						"productos",
+						"5f369d7564b2770017f5d946"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Productos: Mostrar Imagen",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/imagen/productos/5f369d7564b2770017f5d946-148.jpeg?token={{token}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"imagen",
+						"productos",
+						"5f369d7564b2770017f5d946-148.jpeg"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Usuario: Mostrar Imagen",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{url}}/imagen/usuarios/5f340127924bcd288a8414cc-465.jpg?token={{token}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"imagen",
+						"usuarios",
+						"5f340127924bcd288a8414cc-465.jpg"
+					],
+					"query": [
+						{
+							"key": "token",
+							"value": "{{token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
